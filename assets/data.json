@@ -1,0 +1,152 @@
+{
+  "category": {
+    "s": 12.5,
+    "m": 15.5,
+    "l": 22.5,
+    "special": 28.0,
+    "tea": 10.0,
+    "service": 10.0
+  },
+  "dish": [
+    {
+      "id": "1",
+      "name": "蝦餃",
+      "description": "蒸鮮蝦餃",
+      "category": "special",
+      "ingredients": ["鮮蝦", "橄欖油", "蒜蓉", "玉米澱粉"]
+    },
+    {
+      "id": "2",
+      "name": "燒賣",
+      "description": "蒸豬肉餃",
+      "category": "special",
+      "ingredients": ["豬肉", "鮮蝦", "香菇", "蔥"]
+    },
+    {
+      "id": "3",
+      "name": "叉燒包",
+      "description": "蒸叉燒餐包",
+      "category": "l",
+      "ingredients": ["叉燒肉", "麵粉", "酵母"]
+    },
+    {
+      "id": "4",
+      "name": "腸粉",
+      "description": "l",
+      "category": "蒸點心",
+      "ingredients": ["米粉", "鮮蝦", "豬肉", "蔥"]
+    },
+    {
+      "id": "5",
+      "name": "小籠包",
+      "description": "l",
+      "category": "蒸點心",
+      "ingredients": ["豬肉", "高湯", "蔥"]
+    },
+    {
+      "id": "6",
+      "name": "糯米雞",
+      "description": "m",
+      "category": "蒸點心",
+      "ingredients": ["糯米", "雞肉", "香菇", "蓮藕"]
+    },
+    {
+      "id": "7",
+      "name": "鳳爪",
+      "description": "m",
+      "category": "蒸點心",
+      "ingredients": ["雞爪", "黑醋", "辣椒", "蔥"]
+    },
+    {
+      "id": "8",
+      "name": "蘿蔔糕",
+      "description": "蒸蘿蔔糕",
+      "category": "m",
+      "ingredients": ["蘿蔔", "干蝦", "蔥", "米粉"]
+    },
+    {
+      "id": "9",
+      "name": "芋角",
+      "description": "炸芋角",
+      "category": "s",
+      "ingredients": ["芋頭", "麵粉", "蝦米", "香菇"]
+    },
+    {
+      "id": "10",
+      "name": "鹹水角",
+      "description": "炸鹹水角",
+      "category": "s",
+      "ingredients": ["豬肉", "蝦米", "蔥", "麵粉"]
+    },
+    {
+      "id": "11",
+      "name": "牛肉丸",
+      "description": "m",
+      "category": "蒸點心",
+      "ingredients": ["牛肉", "洋蔥", "韭菜", "麵粉"]
+    },
+    {
+      "id": "12",
+      "name": "炸腸粉",
+      "description": "炸腸粉",
+      "category": "l",
+      "ingredients": ["腸粉", "麵粉", "花生粉"]
+    },
+    {
+      "id": "13",
+      "name": "蔥油餅",
+      "description": "煎蔥油餅",
+      "category": "m",
+      "ingredients": ["麵粉", "蔥", "橄欖油"]
+    },
+    {
+      "id": "14",
+      "name": "蛋撻",
+      "description": "焗蛋撻",
+      "category": "l",
+      "ingredients": ["蛋液", "牛奶", "砂糖", "麵粉"]
+    },
+    {
+      "id": "15",
+      "name": "腸粉卷",
+      "description": "蒸腸粉卷",
+      "category": "l",
+      "ingredients": ["腸粉", "鮮蝦", "豬肉", "蔥"]
+    },
+    {
+      "id": "16",
+      "name": "酥皮焗叉燒包",
+      "description": "酥皮焗叉燒包",
+      "category": "l",
+      "ingredients": ["叉燒肉", "麵粉", "酵母", "沙拉醬"]
+    },
+    {
+      "id": "17",
+      "name": "鮮蝦春卷",
+      "description": "炸鮮蝦春卷",
+      "category": "l",
+      "ingredients": ["蝦仁", "春卷皮", "雞蛋", "豬肉"]
+    },
+    {
+      "id": "18",
+      "name": "蒸排骨",
+      "description": "蒸豉椒排骨",
+      "category": "l",
+      "ingredients": ["豬排骨", "豉椒", "蒜蓉"]
+    },
+    {
+      "id": "19",
+      "name": "糯米雞翼",
+      "description": "蒸糯米雞翼",
+      "category": "l",
+      "ingredients": ["糯米", "雞翼", "香菇", "蓮藕"]
+    },
+    {
+      "id": "20",
+      "name": "蓮蓉包",
+      "description": "蒸蓮蓉包",
+      "category": "s",
+      "ingredients": ["蓮蓉", "麵粉", "酵母"]
+    }
+  ]
+}
