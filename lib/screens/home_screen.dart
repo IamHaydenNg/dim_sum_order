@@ -1,3 +1,4 @@
+import 'package:dim_sum_order/screens/menu_screen.dart';
 import 'package:dim_sum_order/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = [
-    Container(),
+    const MenuScreen(),
     Container(),
   ];
 

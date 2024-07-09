@@ -11,7 +11,7 @@ class DimSum {
   final String name;
   final String description;
   final String category;
-  final List<String> ingredients;
+  final List ingredients;
 
   factory DimSum.fromJson(Map<String, dynamic> json) {
     return DimSum(
