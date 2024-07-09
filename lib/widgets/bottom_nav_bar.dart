@@ -12,17 +12,17 @@ class BottomNavBar extends StatelessWidget {
     return BottomNavigationBar(
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.list_alt),
-          label: '主頁',
+          icon: Icon(Icons.list_alt_outlined),
+          label: '餐牌',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_cart),
+          icon: Icon(Icons.shopping_cart_outlined),
           label: '訂單',
         ),
       ],
       currentIndex: currentIndex,
       onTap: onItemTapped,
-      fixedColor: Colors.amber,
+      fixedColor: Theme.of(context).primaryColor,
     );
   }
 }

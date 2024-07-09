@@ -21,6 +21,14 @@ class Category extends StatelessWidget {
           final category = snapshot.data!;
           return Column(
             children: [
+              TextButton.icon(
+                onPressed: () {},
+                label: const Text('big point'),
+                icon: Icon(
+                  Icons.label_important,
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
               Text(category.l.toString()),
               Text(category.m.toString()),
               Text(category.s.toString()),

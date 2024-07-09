@@ -20,9 +20,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: '點心紙',
-      home: HomeScreen(),
+      theme: ThemeData(primaryColor: Color.fromARGB(255, 45, 168, 108)),
+      home: const HomeScreen(),
     );
   }
 }
