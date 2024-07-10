@@ -1,8 +1,12 @@
 import 'package:dim_sum_order/models/dimsum.dart';
+import 'package:dim_sum_order/widgets/dim_sum_card.dart';
 import 'package:flutter/material.dart';
 
 class DimSumList extends StatelessWidget {
-  const DimSumList({super.key, required this.dimsum});
+  const DimSumList({
+    super.key,
+    required this.dimsum,
+  });
 
   final Future<List<DimSum>> dimsum;
 
@@ -25,7 +29,9 @@ class DimSumList extends StatelessWidget {
             itemCount: dimSumList.length,
             itemBuilder: (context, index) {
               final dimSumItem = dimSumList[index];
-              return Text(dimSumItem.name);
+              return DimSumCard(
+                dimSumItem: dimSumItem,
+              );
             },
           );
         }

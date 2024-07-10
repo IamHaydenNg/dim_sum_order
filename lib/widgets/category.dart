@@ -9,17 +9,14 @@ class Category extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber,
-      child: const Column(
-        children: [
-          CategoryLabel(label: '全部'),
-          CategoryLabel(label: '小點'),
-          CategoryLabel(label: '中點'),
-          CategoryLabel(label: '大點'),
-          CategoryLabel(label: '特點'),
-        ],
-      ),
+    return const Column(
+      children: [
+        CategoryLabel(label: '全部'),
+        CategoryLabel(label: '小點'),
+        CategoryLabel(label: '中點'),
+        CategoryLabel(label: '大點'),
+        CategoryLabel(label: '特點'),
+      ],
     );
   }
 }

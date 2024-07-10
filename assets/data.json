@@ -13,7 +13,8 @@
       "name": "蝦餃",
       "description": "蒸鮮蝦餃",
       "category": "special",
-      "ingredients": ["鮮蝦", "橄欖油", "蒜蓉", "玉米澱粉"]
+      "ingredients": ["鮮蝦", "橄欖油", "蒜蓉", "玉米澱粉"],
+      "image": "assets/images/shrimp_dumplings.jpeg"
     },
     {
       "id": "2",
@@ -27,34 +28,35 @@
       "name": "叉燒包",
       "description": "蒸叉燒餐包",
       "category": "l",
-      "ingredients": ["叉燒肉", "麵粉", "酵母"]
+      "ingredients": ["叉燒肉", "麵粉", "酵母"],
+      "image": "assets/images/char_siu.jpeg"
     },
     {
       "id": "4",
       "name": "腸粉",
-      "description": "l",
-      "category": "蒸點心",
+      "description": "蒸點心",
+      "category": "l",
       "ingredients": ["米粉", "鮮蝦", "豬肉", "蔥"]
     },
     {
       "id": "5",
       "name": "小籠包",
-      "description": "l",
-      "category": "蒸點心",
+      "description": "蒸點心",
+      "category": "l",
       "ingredients": ["豬肉", "高湯", "蔥"]
     },
     {
       "id": "6",
       "name": "糯米雞",
-      "description": "m",
-      "category": "蒸點心",
+      "description": "蒸點心",
+      "category": "m",
       "ingredients": ["糯米", "雞肉", "香菇", "蓮藕"]
     },
     {
       "id": "7",
       "name": "鳳爪",
-      "description": "m",
-      "category": "蒸點心",
+      "description": "蒸點心",
+      "category": "m",
       "ingredients": ["雞爪", "黑醋", "辣椒", "蔥"]
     },
     {
@@ -81,8 +83,8 @@
     {
       "id": "11",
       "name": "牛肉丸",
-      "description": "m",
-      "category": "蒸點心",
+      "description": "蒸點心",
+      "category": "m",
       "ingredients": ["牛肉", "洋蔥", "韭菜", "麵粉"]
     },
     {
