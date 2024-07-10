@@ -18,6 +18,14 @@ class _MenuScreenState extends State<MenuScreen> {
   late Future<DimSumCategory> _category;
   late Future<List<DimSum>> _dimsum;
 
+  String _selectedCategory = 'a';
+
+  void _onCategoryPressed(String type) {
+    setState(() {
+      _selectedCategory = type;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -33,10 +41,12 @@ class _MenuScreenState extends State<MenuScreen> {
         children: [
           Category(
             dimSumCategory: _category,
+            onPressAction: _onCategoryPressed,
           ),
           Expanded(
             child: DimSumList(
               dimsum: _dimsum,
+              selectedCategory: _selectedCategory,
             ),
           ),
         ],

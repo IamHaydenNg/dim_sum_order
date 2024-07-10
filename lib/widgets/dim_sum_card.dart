@@ -12,8 +12,8 @@ class DimSumCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const Image(
-        image: AssetImage('assets/images/char_siu.jpeg'),
+      leading: Image.asset(
+        'assets/images/char_siu.jpeg',
       ),
       title: Text(dimSumItem.name),
       subtitle: Text('食材: ${dimSumItem.description}'),

@@ -1,4 +1,5 @@
 import 'package:dim_sum_order/models/dimsum.dart';
+import 'package:dim_sum_order/models/dimsum_category.dart';
 import 'package:dim_sum_order/widgets/dim_sum_card.dart';
 import 'package:flutter/material.dart';
 
@@ -6,9 +7,11 @@ class DimSumList extends StatelessWidget {
   const DimSumList({
     super.key,
     required this.dimsum,
+    required this.selectedCategory,
   });
 
   final Future<List<DimSum>> dimsum;
+  final String selectedCategory;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +27,19 @@ class DimSumList extends StatelessWidget {
             child: Text('Error loading dimsum item'),
           );
         } else {
-          final dimSumList = snapshot.data!;
+          final List<DimSum> allDimSumList = snapshot.data!;
+          final List<DimSum> filteredList = allDimSumList.where((item) {
+            return item.category == selectedCategory;
+          }).toList();
           return ListView.builder(
-            itemCount: dimSumList.length,
+            itemCount: selectedCategory == 'a'
+                ? allDimSumList.length
+                : filteredList.length,
             itemBuilder: (context, index) {
-              final dimSumItem = dimSumList[index];
+              final DimSum dimSumItem = selectedCategory == 'a'
+                  ? allDimSumList[index]
+                  : filteredList[index];
+
               return DimSumCard(
                 dimSumItem: dimSumItem,
               );
