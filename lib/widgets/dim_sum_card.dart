@@ -13,8 +13,7 @@ class DimSumCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Image.asset(
-        'assets/images/char_siu.jpeg',
-        // dimSumItem.image
+        dimSumItem.image,
       ),
       title: Text(dimSumItem.name),
       subtitle: Text('食材: ${dimSumItem.description}'),

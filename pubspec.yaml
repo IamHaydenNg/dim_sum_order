@@ -61,6 +61,20 @@ flutter:
     - assets/data.json
     - assets/images/shrimp_dumplings.jpeg
     - assets/images/char_siu.jpeg
+    - assets/images/steamed_pork_ribs.jpeg
+    - assets/images/siu_mai.jpeg
+    - assets/images/cheung_fun.jpeg
+    - assets/images/lotus_paste_bun.jpeg
+    - assets/images/egg_tart.jpeg
+    - assets/images/strick_rice_chicken.jpeg
+    - assets/images/chicken_feet.jpeg
+    - assets/images/beef_meat_ball.jpeg
+    - assets/images/siu_lung_bun.jpeg
+    - assets/images/turnip_cake.jpeg
+    - assets/images/glutinous_rice_dumplings.jpeg
+    - assets/images/teochew_dumpling.jpeg
+    - assets/images/scallion_pancake.jpeg
+    - assets/images/baked_char_siu_bun.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

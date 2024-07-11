@@ -13,14 +13,15 @@
       "name": "蝦餃",
       "description": "蒸鮮蝦餃",
       "category": "special",
-      "ingredients": ["鮮蝦", "橄欖油", "蒜蓉", "玉米澱粉"],
-      "image": "assets/images/shrimp_dumplings.jpeg"
+      "image": "assets/images/shrimp_dumplings.jpeg",
+      "ingredients": ["鮮蝦", "橄欖油", "蒜蓉", "玉米澱粉"]
     },
     {
       "id": "2",
       "name": "燒賣",
       "description": "蒸豬肉餃",
       "category": "special",
+      "image": "assets/images/siu_mai.jpeg",
       "ingredients": ["豬肉", "鮮蝦", "香菇", "蔥"]
     },
     {
@@ -28,21 +29,23 @@
       "name": "叉燒包",
       "description": "蒸叉燒餐包",
       "category": "l",
-      "ingredients": ["叉燒肉", "麵粉", "酵母"],
-      "image": "assets/images/char_siu.jpeg"
+      "image": "assets/images/char_siu.jpeg",
+      "ingredients": ["叉燒肉", "麵粉", "酵母"]
     },
     {
       "id": "4",
       "name": "腸粉",
       "description": "蒸點心",
       "category": "l",
+      "image": "assets/images/cheung_fun.jpeg",
       "ingredients": ["米粉", "鮮蝦", "豬肉", "蔥"]
     },
     {
       "id": "5",
       "name": "小籠包",
       "description": "蒸點心",
-      "category": "l",
+      "category": "special",
+      "image": "assets/images/siu_lung_bun.jpeg",
       "ingredients": ["豬肉", "高湯", "蔥"]
     },
     {
@@ -50,6 +53,7 @@
       "name": "糯米雞",
       "description": "蒸點心",
       "category": "m",
+      "image": "assets/images/strick_rice_chicken.jpeg",
       "ingredients": ["糯米", "雞肉", "香菇", "蓮藕"]
     },
     {
@@ -57,6 +61,7 @@
       "name": "鳳爪",
       "description": "蒸點心",
       "category": "m",
+      "image": "assets/images/chicken_feet.jpeg",
       "ingredients": ["雞爪", "黑醋", "辣椒", "蔥"]
     },
     {
@@ -64,90 +69,71 @@
       "name": "蘿蔔糕",
       "description": "蒸蘿蔔糕",
       "category": "m",
+      "image": "assets/images/turnip_cake.jpeg",
       "ingredients": ["蘿蔔", "干蝦", "蔥", "米粉"]
     },
     {
       "id": "9",
-      "name": "芋角",
-      "description": "炸芋角",
-      "category": "s",
-      "ingredients": ["芋頭", "麵粉", "蝦米", "香菇"]
-    },
-    {
-      "id": "10",
       "name": "鹹水角",
       "description": "炸鹹水角",
       "category": "s",
+      "image": "assets/images/glutinous_rice_dumplings.jpeg",
       "ingredients": ["豬肉", "蝦米", "蔥", "麵粉"]
     },
     {
-      "id": "11",
+      "id": "10",
       "name": "牛肉丸",
       "description": "蒸點心",
       "category": "m",
+      "image": "assets/images/beef_meat_ball.jpeg",
       "ingredients": ["牛肉", "洋蔥", "韭菜", "麵粉"]
     },
     {
-      "id": "12",
-      "name": "炸腸粉",
-      "description": "炸腸粉",
+      "id": "11",
+      "name": "潮州粉粿",
+      "description": "潮州粉粿",
       "category": "l",
+      "image": "assets/images/teochew_dumpling.jpeg",
       "ingredients": ["腸粉", "麵粉", "花生粉"]
     },
     {
-      "id": "13",
+      "id": "12",
       "name": "蔥油餅",
       "description": "煎蔥油餅",
       "category": "m",
+      "image": "assets/images/scallion_pancake.jpeg",
       "ingredients": ["麵粉", "蔥", "橄欖油"]
     },
     {
-      "id": "14",
+      "id": "13",
       "name": "蛋撻",
       "description": "焗蛋撻",
       "category": "l",
+      "image": "assets/images/egg_tart.jpeg",
       "ingredients": ["蛋液", "牛奶", "砂糖", "麵粉"]
     },
     {
-      "id": "15",
-      "name": "腸粉卷",
-      "description": "蒸腸粉卷",
-      "category": "l",
-      "ingredients": ["腸粉", "鮮蝦", "豬肉", "蔥"]
-    },
-    {
-      "id": "16",
+      "id": "14",
       "name": "酥皮焗叉燒包",
       "description": "酥皮焗叉燒包",
-      "category": "l",
+      "category": "special",
+      "image": "assets/images/baked_char_siu_bun.jpeg",
       "ingredients": ["叉燒肉", "麵粉", "酵母", "沙拉醬"]
     },
     {
-      "id": "17",
-      "name": "鮮蝦春卷",
-      "description": "炸鮮蝦春卷",
-      "category": "l",
-      "ingredients": ["蝦仁", "春卷皮", "雞蛋", "豬肉"]
-    },
-    {
-      "id": "18",
+      "id": "15",
       "name": "蒸排骨",
       "description": "蒸豉椒排骨",
       "category": "l",
+      "image": "assets/images/steamed_pork_ribs.jpeg",
       "ingredients": ["豬排骨", "豉椒", "蒜蓉"]
     },
     {
-      "id": "19",
-      "name": "糯米雞翼",
-      "description": "蒸糯米雞翼",
-      "category": "l",
-      "ingredients": ["糯米", "雞翼", "香菇", "蓮藕"]
-    },
-    {
-      "id": "20",
+      "id": "16",
       "name": "蓮蓉包",
       "description": "蒸蓮蓉包",
       "category": "s",
+      "image": "assets/images/lotus_paste_bun.jpeg",
       "ingredients": ["蓮蓉", "麵粉", "酵母"]
     }
   ]
