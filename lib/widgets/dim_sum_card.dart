@@ -1,5 +1,6 @@
 import 'package:dim_sum_order/models/dimsum.dart';
 import 'package:dim_sum_order/models/dimsum_category.dart';
+import 'package:dim_sum_order/screens/dim_sum_detail.dart';
 import 'package:dim_sum_order/utils/source_data.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +51,11 @@ class DimSumCard extends StatelessWidget {
             ),
             title: Text(dimSumItem.name),
             subtitle: Text('價格: \$${price(dimSumItem.category).toString()}'),
-            onTap: () {},
+            onTap: () => showDialog(
+              context: context,
+              builder: (BuildContext context) =>
+                  DimSumDetail(dimSumItem: dimSumItem),
+            ),
           );
         }
       },
