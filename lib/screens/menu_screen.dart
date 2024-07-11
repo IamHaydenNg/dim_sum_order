@@ -1,5 +1,4 @@
 import 'package:dim_sum_order/models/dimsum.dart';
-import 'package:dim_sum_order/models/dimsum_category.dart';
 import 'package:dim_sum_order/utils/source_data.dart';
 import 'package:dim_sum_order/widgets/category.dart';
 import 'package:dim_sum_order/widgets/dim_sum_list.dart';
@@ -15,7 +14,6 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  late Future<DimSumCategory> _category;
   late Future<List<DimSum>> _dimsum;
 
   String _selectedCategory = 'a';
@@ -28,9 +26,8 @@ class _MenuScreenState extends State<MenuScreen> {
 
   @override
   void initState() {
-    super.initState();
-    _category = SourceData.loadDimSumCategory();
     _dimsum = SourceData.loadDimSumList();
+    super.initState();
   }
 
   @override
@@ -40,7 +37,6 @@ class _MenuScreenState extends State<MenuScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Category(
-            dimSumCategory: _category,
             onPressAction: _onCategoryPressed,
           ),
           Expanded(

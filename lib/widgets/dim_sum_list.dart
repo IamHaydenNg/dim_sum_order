@@ -1,5 +1,4 @@
 import 'package:dim_sum_order/models/dimsum.dart';
-import 'package:dim_sum_order/models/dimsum_category.dart';
 import 'package:dim_sum_order/widgets/dim_sum_card.dart';
 import 'package:flutter/material.dart';
 

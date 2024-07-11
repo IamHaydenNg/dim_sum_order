@@ -1,14 +1,11 @@
-import 'package:dim_sum_order/models/dimsum_category.dart';
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
   const Category({
     super.key,
-    required this.dimSumCategory,
     required this.onPressAction,
   });
 
-  final Future<DimSumCategory> dimSumCategory;
   final void Function(String) onPressAction;
 
   Widget categoryFilterButton({

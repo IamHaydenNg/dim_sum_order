@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatelessWidget {
-  const BottomNavBar(
-      {super.key, required this.currentIndex, required this.onItemTapped});
+  const BottomNavBar({
+    super.key,
+    required this.currentIndex,
+    required this.onItemTapped,
+  });
 
   final int currentIndex;
   final void Function(int) onItemTapped;
