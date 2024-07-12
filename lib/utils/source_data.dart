@@ -18,4 +18,12 @@ class SourceData {
         await json.decode(dataString)['category'];
     return DimSumCategory.fromJson(jsonData);
   }
+
+  static Map<String, String> trans = {
+    '全部': 'a',
+    '小點': 's',
+    '中點': 'm',
+    '大點': 'l',
+    '特點': 'special',
+  };
 }

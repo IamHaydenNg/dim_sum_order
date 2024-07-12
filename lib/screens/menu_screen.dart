@@ -38,6 +38,7 @@ class _MenuScreenState extends State<MenuScreen> {
         children: [
           Category(
             onPressAction: _onCategoryPressed,
+            selectedCategory: _selectedCategory,
           ),
           Expanded(
             child: DimSumList(
