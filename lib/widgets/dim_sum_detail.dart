@@ -3,15 +3,10 @@ import 'package:dim_sum_order/providers/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class DimSumDetail extends StatefulWidget {
+class DimSumDetail extends StatelessWidget {
   const DimSumDetail({super.key, required this.dimSumItem});
   final DimSum dimSumItem;
 
-  @override
-  State<DimSumDetail> createState() => _DimSumDetailState();
-}
-
-class _DimSumDetailState extends State<DimSumDetail> {
   void _addToCart(BuildContext context, DimSum item) {
     Provider.of<CartProvider>(context, listen: false).addItem(item);
   }
@@ -33,7 +28,7 @@ class _DimSumDetailState extends State<DimSumDetail> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(widget.dimSumItem.image),
+          Image.asset(dimSumItem.image),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -42,18 +37,18 @@ class _DimSumDetailState extends State<DimSumDetail> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text('點心: ${widget.dimSumItem.name}'),
+                    child: Text('點心: ${dimSumItem.name}'),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Text('簡介: ${widget.dimSumItem.description}'),
+                    child: Text('簡介: ${dimSumItem.description}'),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: [
                         const Text('食材: '),
-                        for (var ingredient in widget.dimSumItem.ingredients)
+                        for (var ingredient in dimSumItem.ingredients)
                           Text('$ingredient '),
                       ],
                     ),
@@ -64,9 +59,9 @@ class _DimSumDetailState extends State<DimSumDetail> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      itemOnCartAmount(widget.dimSumItem) == 0
+                      itemOnCartAmount(dimSumItem) == 0
                           ? null
-                          : _removeFromCart(context, widget.dimSumItem);
+                          : _removeFromCart(context, dimSumItem);
                     },
                     padding: EdgeInsets.zero,
                     constraints: const BoxConstraints(),
@@ -81,12 +76,12 @@ class _DimSumDetailState extends State<DimSumDetail> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     child: Text(
-                      itemOnCartAmount(widget.dimSumItem).toString(),
+                      itemOnCartAmount(dimSumItem).toString(),
                     ),
                   ),
                   IconButton(
                     onPressed: () {
-                      _addToCart(context, widget.dimSumItem);
+                      _addToCart(context, dimSumItem);
                     },
                     padding: EdgeInsets.zero,
                     constraints: const BoxConstraints(),
