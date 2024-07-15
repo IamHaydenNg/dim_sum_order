@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dim_sum_order/models/dimsum.dart';
 
 class CartProvider with ChangeNotifier {
-  final List<DimSum> _items = [];
+  List<DimSum> _items = [];
 
   List<DimSum> get items => _items;
 
@@ -12,9 +12,16 @@ class CartProvider with ChangeNotifier {
   }
 
   void removeItem(DimSum dimSum) {
-    _items.remove(dimSum);
+    final DimSum firstItem = _items
+        .firstWhere((x) => x.id == dimSum.id && x.category == dimSum.category);
+    _items.remove(firstItem);
     notifyListeners();
   }
 
   int get itemCount => _items.length;
+
+  void clearCart() {
+    _items = [];
+    notifyListeners();
+  }
 }
