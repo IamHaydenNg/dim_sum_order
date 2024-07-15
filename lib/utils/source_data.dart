@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dim_sum_order/models/dimsum.dart';
 import 'package:dim_sum_order/models/dimsum_category.dart';
+import 'package:dim_sum_order/providers/cart_provider.dart';
 import 'package:flutter/services.dart';
 
 class SourceData {
@@ -26,4 +27,8 @@ class SourceData {
     '大點': 'l',
     '特點': 'special',
   };
+
+  static int itemOnCartAmount(CartProvider cart, DimSum item) {
+    return cart.items.where((cartItem) => cartItem.id == item.id).length;
+  }
 }

@@ -1,5 +1,6 @@
 import 'package:dim_sum_order/models/dimsum.dart';
 import 'package:dim_sum_order/providers/cart_provider.dart';
+import 'package:dim_sum_order/utils/source_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,10 +19,6 @@ class DimSumDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context);
-
-    int itemOnCartAmount(DimSum item) {
-      return cart.items.where((cartItem) => cartItem.id == item.id).length;
-    }
 
     return Dialog(
       shape: const Border(bottom: BorderSide.none),
@@ -59,7 +56,7 @@ class DimSumDetail extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      itemOnCartAmount(dimSumItem) == 0
+                      SourceData.itemOnCartAmount(cart, dimSumItem) == 0
                           ? null
                           : _removeFromCart(context, dimSumItem);
                     },
@@ -76,7 +73,7 @@ class DimSumDetail extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     child: Text(
-                      itemOnCartAmount(dimSumItem).toString(),
+                      SourceData.itemOnCartAmount(cart, dimSumItem).toString(),
                     ),
                   ),
                   IconButton(
