@@ -19,6 +19,8 @@ class CartScreen extends StatelessWidget {
     final Future<DimSumCategory> category =
         ModalRoute.of(context)!.settings.arguments as Future<DimSumCategory>;
 
+    final noRepetitiveList = cartItems.toSet().toList();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('確認訂單'),
@@ -50,27 +52,42 @@ class CartScreen extends StatelessWidget {
                       final dimSumCategory = snapshot.data!;
                       return Expanded(
                         child: ListView.builder(
-                          itemCount: cart.itemCount,
+                          itemCount: noRepetitiveList.length,
                           itemBuilder: (context, index) {
-                            final item = cartItems[index];
-                            return Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                SizedBox(
-                                  width: 48,
-                                  height: 48,
-                                  child: Image.asset(item.image),
-                                ),
-                                Text(
-                                  SourceData.itemOnCartAmount(cart, item)
-                                      .toString(),
-                                ),
-                                Text(
-                                  SourceData.price(
-                                          dimSumCategory, item.category)
-                                      .toString(),
-                                )
-                              ],
+                            final item = noRepetitiveList[index];
+                            final itemAmount =
+                                SourceData.itemOnCartAmount(cart, item);
+                            final price =
+                                SourceData.price(dimSumCategory, item.category);
+                            final totalPrice = price * itemAmount;
+
+                            return Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 0, 0, 8),
+                              child: Row(
+                                children: [
+                                  Flexible(
+                                    fit: FlexFit.tight,
+                                    child: Text(
+                                      item.name,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  Flexible(
+                                    fit: FlexFit.tight,
+                                    child: Text(
+                                      itemAmount.toString(),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  Flexible(
+                                    fit: FlexFit.tight,
+                                    child: Text(
+                                      '\$${totalPrice.toString()}',
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  )
+                                ],
+                              ),
                             );
                           },
                         ),
@@ -78,7 +95,18 @@ class CartScreen extends StatelessWidget {
                     }
                   },
                 )
-              : Container(),
+              : Expanded(
+                  child: Center(
+                    child: Text(
+                      '歡迎光臨',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 32,
+                      ),
+                    ),
+                  ),
+                ),
         ],
       ),
     );
