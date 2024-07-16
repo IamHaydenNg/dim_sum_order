@@ -1,5 +1,8 @@
+import 'package:dim_sum_order/models/dimsum_category.dart';
 import 'package:dim_sum_order/providers/cart_provider.dart';
+import 'package:dim_sum_order/screens/cart_screen.dart';
 import 'package:dim_sum_order/screens/menu_screen.dart';
+import 'package:dim_sum_order/utils/source_data.dart';
 import 'package:dim_sum_order/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
@@ -16,6 +19,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  late Future<DimSumCategory> _category;
 
   static final List<Widget> _widgetOptions = [
     const MenuScreen(),
@@ -24,6 +28,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _onItemTapped(int index) {
     setState(() => _selectedIndex = index);
+  }
+
+  @override
+  void initState() {
+    _category = SourceData.loadDimSumCategory();
+    super.initState();
   }
 
   @override
@@ -42,7 +52,11 @@ class _HomeScreenState extends State<HomeScreen> {
             position: badges.BadgePosition.topEnd(top: 0, end: 3),
             child: IconButton(
               icon: const Icon(Icons.shopping_cart),
-              onPressed: () {},
+              onPressed: () => Navigator.pushNamed(
+                context,
+                CartScreen.routeName,
+                arguments: _category,
+              ),
             ),
           )
         ],

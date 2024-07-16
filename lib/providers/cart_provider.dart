@@ -6,6 +6,8 @@ class CartProvider with ChangeNotifier {
 
   List<DimSum> get items => _items;
 
+  int get itemCount => _items.length;
+
   void addItem(DimSum dimSum) {
     _items.add(dimSum);
     notifyListeners();
@@ -17,8 +19,6 @@ class CartProvider with ChangeNotifier {
     _items.remove(firstItem);
     notifyListeners();
   }
-
-  int get itemCount => _items.length;
 
   void clearCart() {
     _items = [];

@@ -28,6 +28,21 @@ class SourceData {
     '特點': 'special',
   };
 
+  static double price(DimSumCategory category, String dimSumItemCate) {
+    switch (dimSumItemCate) {
+      case 's':
+        return category.s;
+      case 'm':
+        return category.m;
+      case 'l':
+        return category.l;
+      case 'special':
+        return category.special;
+      default:
+        return 0.0;
+    }
+  }
+
   static int itemOnCartAmount(CartProvider cart, DimSum item) {
     return cart.items.where((cartItem) => cartItem.id == item.id).length;
   }
