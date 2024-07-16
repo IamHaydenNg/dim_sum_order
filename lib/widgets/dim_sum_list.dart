@@ -39,7 +39,7 @@ class DimSumList extends StatelessWidget {
                   ? allDimSumList[index]
                   : filteredList[index];
 
-              return DimSumCard(
+              return DimSumItem(
                 dimSumItem: dimSumItem,
               );
             },

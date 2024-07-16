@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:provider/provider.dart';
 
-class DimSumCard extends StatelessWidget {
-  DimSumCard({
+class DimSumItem extends StatelessWidget {
+  DimSumItem({
     super.key,
     required this.dimSumItem,
   });
