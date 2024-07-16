@@ -2,7 +2,6 @@ import 'package:dim_sum_order/models/dimsum.dart';
 import 'package:dim_sum_order/models/dimsum_category.dart';
 import 'package:dim_sum_order/providers/cart_provider.dart';
 import 'package:dim_sum_order/utils/source_data.dart';
-import 'package:dim_sum_order/widgets/category.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

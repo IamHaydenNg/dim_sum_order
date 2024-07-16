@@ -35,27 +35,13 @@ class DimSumItem extends StatelessWidget {
         } else {
           final DimSumCategory category = snapshot.data!;
 
-          double price(String dimSumItemCate) {
-            switch (dimSumItemCate) {
-              case 's':
-                return category.s;
-              case 'm':
-                return category.m;
-              case 'l':
-                return category.l;
-              case 'special':
-                return category.special;
-              default:
-                return 0.0;
-            }
-          }
-
           return ListTile(
             leading: Image.asset(
               dimSumItem.image,
             ),
             title: Text(dimSumItem.name),
-            subtitle: Text('價格: \$${price(dimSumItem.category).toString()}'),
+            subtitle: Text(
+                '價格: \$${SourceData.price(category, dimSumItem.category)}'),
             onTap: () => showDialog(
               context: context,
               builder: (BuildContext context) => DimSumDetail(
