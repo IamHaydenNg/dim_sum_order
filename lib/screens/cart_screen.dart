@@ -10,6 +10,17 @@ class CartScreen extends StatelessWidget {
 
   const CartScreen({super.key});
 
+  Widget flexibleItem(String displayText, [TextStyle? style]) {
+    return Flexible(
+      fit: FlexFit.tight,
+      child: Text(
+        displayText,
+        textAlign: TextAlign.center,
+        style: style,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final CartProvider cart = Provider.of<CartProvider>(context);
@@ -50,47 +61,64 @@ class CartScreen extends StatelessWidget {
                       );
                     } else {
                       final dimSumCategory = snapshot.data!;
-                      return Expanded(
-                        child: ListView.builder(
-                          itemCount: noRepetitiveList.length,
-                          itemBuilder: (context, index) {
-                            final item = noRepetitiveList[index];
-                            final itemAmount =
-                                SourceData.itemOnCartAmount(cart, item);
-                            final price =
-                                SourceData.price(dimSumCategory, item.category);
-                            final totalPrice = price * itemAmount;
+                      return Column(
+                        children: [
+                          ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: noRepetitiveList.length,
+                            itemBuilder: (context, index) {
+                              final item = noRepetitiveList[index];
+                              final itemAmount =
+                                  SourceData.itemOnCartAmount(cart, item);
+                              final price = SourceData.price(
+                                  dimSumCategory, item.category);
+                              final itemPrice = price * itemAmount;
 
-                            return Padding(
-                              padding: const EdgeInsets.fromLTRB(0, 0, 0, 8),
-                              child: Row(
-                                children: [
-                                  Flexible(
-                                    fit: FlexFit.tight,
-                                    child: Text(
-                                      item.name,
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                  Flexible(
-                                    fit: FlexFit.tight,
-                                    child: Text(
+                              return Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 8),
+                                child: Row(
+                                  children: [
+                                    flexibleItem(item.name),
+                                    flexibleItem(
                                       itemAmount.toString(),
-                                      textAlign: TextAlign.center,
                                     ),
-                                  ),
-                                  Flexible(
-                                    fit: FlexFit.tight,
-                                    child: Text(
-                                      '\$${totalPrice.toString()}',
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  )
-                                ],
+                                    flexibleItem('\$${itemPrice.toString()}'),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                          const Divider(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              flexibleItem(
+                                '總計: ',
+                                const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.red,
+                                ),
                               ),
-                            );
-                          },
-                        ),
+                              flexibleItem(
+                                '${cartItems.length}',
+                                const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.red,
+                                ),
+                              ),
+                              flexibleItem(
+                                '\$${cart.total}',
+                                const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
                       );
                     }
                   },

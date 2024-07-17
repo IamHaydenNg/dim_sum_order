@@ -46,6 +46,7 @@ class DimSumItem extends StatelessWidget {
               context: context,
               builder: (BuildContext context) => DimSumDetail(
                 dimSumItem: dimSumItem,
+                dimSumCategory: category,
               ),
             ),
             trailing: SourceData.itemOnCartAmount(cart, dimSumItem) > 0

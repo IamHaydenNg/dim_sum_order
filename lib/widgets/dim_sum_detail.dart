@@ -1,19 +1,27 @@
 import 'package:dim_sum_order/models/dimsum.dart';
+import 'package:dim_sum_order/models/dimsum_category.dart';
 import 'package:dim_sum_order/providers/cart_provider.dart';
 import 'package:dim_sum_order/utils/source_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class DimSumDetail extends StatelessWidget {
-  const DimSumDetail({super.key, required this.dimSumItem});
+  const DimSumDetail({
+    super.key,
+    required this.dimSumItem,
+    required this.dimSumCategory,
+  });
   final DimSum dimSumItem;
+  final DimSumCategory dimSumCategory;
 
   void _addToCart(BuildContext context, DimSum item) {
     Provider.of<CartProvider>(context, listen: false).addItem(item);
+    Provider.of<CartProvider>(context, listen: false).setTotal(dimSumCategory);
   }
 
   void _removeFromCart(BuildContext context, DimSum item) {
     Provider.of<CartProvider>(context, listen: false).removeItem(item);
+    Provider.of<CartProvider>(context, listen: false).setTotal(dimSumCategory);
   }
 
   @override
