@@ -135,32 +135,33 @@ class CartScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-          Expanded(
-            child: SafeArea(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStateProperty.all(
-                        Colors.amber,
+          if (cartItems.isNotEmpty)
+            Expanded(
+              child: SafeArea(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 16),
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStateProperty.all(
+                          Colors.amber,
+                        ),
+                        foregroundColor: WidgetStateProperty.all(
+                          Theme.of(context).primaryColor,
+                        ),
                       ),
-                      foregroundColor: WidgetStateProperty.all(
-                        Theme.of(context).primaryColor,
+                      child: const Text(
+                        '確認訂單',
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                    ),
-                    child: const Text(
-                      '確認訂單',
-                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
               ),
-            ),
-          )
+            )
         ],
       ),
     );
