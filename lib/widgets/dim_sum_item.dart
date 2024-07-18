@@ -49,12 +49,13 @@ class DimSumItem extends StatelessWidget {
                 dimSumCategory: category,
               ),
             ),
-            trailing: SourceData.itemOnCartAmount(cart, dimSumItem) > 0
+            trailing: SourceData.itemOnCartQuantity(cart, dimSumItem) > 0
                 ? badges.Badge(
                     badgeStyle:
                         const badges.BadgeStyle(badgeColor: Colors.amber),
                     badgeContent: Text(
-                      SourceData.itemOnCartAmount(cart, dimSumItem).toString(),
+                      SourceData.itemOnCartQuantity(cart, dimSumItem)
+                          .toString(),
                       style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                   )

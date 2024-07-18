@@ -64,7 +64,7 @@ class DimSumDetail extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      SourceData.itemOnCartAmount(cart, dimSumItem) == 0
+                      SourceData.itemOnCartQuantity(cart, dimSumItem) == 0
                           ? null
                           : _removeFromCart(context, dimSumItem);
                     },
@@ -81,7 +81,8 @@ class DimSumDetail extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     child: Text(
-                      SourceData.itemOnCartAmount(cart, dimSumItem).toString(),
+                      SourceData.itemOnCartQuantity(cart, dimSumItem)
+                          .toString(),
                     ),
                   ),
                   IconButton(

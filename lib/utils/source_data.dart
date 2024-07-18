@@ -43,7 +43,7 @@ class SourceData {
     }
   }
 
-  static int itemOnCartAmount(CartProvider cart, DimSum item) {
+  static int itemOnCartQuantity(CartProvider cart, DimSum item) {
     return cart.items.where((cartItem) => cartItem.id == item.id).length;
   }
 }

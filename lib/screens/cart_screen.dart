@@ -69,7 +69,7 @@ class CartScreen extends StatelessWidget {
                             itemBuilder: (context, index) {
                               final item = noRepetitiveList[index];
                               final quantity =
-                                  SourceData.itemOnCartAmount(cart, item);
+                                  SourceData.itemOnCartQuantity(cart, item);
                               final price = SourceData.price(
                                   dimSumCategory, item.category);
                               final itemPrice = price * quantity;
