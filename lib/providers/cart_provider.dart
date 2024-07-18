@@ -1,3 +1,4 @@
+import 'package:dim_sum_order/models/order.dart';
 import 'package:dim_sum_order/utils/source_data.dart';
 import 'package:flutter/material.dart';
 import 'package:dim_sum_order/models/dimsum.dart';
@@ -14,16 +15,12 @@ class CartProvider with ChangeNotifier {
 
   double get total => _cartTotal;
 
-  List<dynamic> _orders = [];
+  List<Order> _orders = [];
 
-  List<dynamic> get orders => _orders;
+  List<Order> get orders => _orders;
 
-  void addOrders({
-    required double total,
-    required int quantity,
-    required List<DimSum> order,
-  }) {
-    _orders.add({total, quantity, order});
+  void addOrders(Order order) {
+    _orders.add(order);
     notifyListeners();
   }
 

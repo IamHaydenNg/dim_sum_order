@@ -2,6 +2,7 @@ import 'package:dim_sum_order/models/dimsum_category.dart';
 import 'package:dim_sum_order/providers/cart_provider.dart';
 import 'package:dim_sum_order/screens/cart_screen.dart';
 import 'package:dim_sum_order/screens/menu_screen.dart';
+import 'package:dim_sum_order/screens/order_screen.dart';
 import 'package:dim_sum_order/utils/source_data.dart';
 import 'package:dim_sum_order/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   static final List<Widget> _widgetOptions = [
     const MenuScreen(),
-    Container(),
+    const OrderScreen(),
   ];
 
   void _onItemTapped(int index) {

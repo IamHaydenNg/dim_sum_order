@@ -1,5 +1,6 @@
 import 'package:dim_sum_order/models/dimsum.dart';
 import 'package:dim_sum_order/models/dimsum_category.dart';
+import 'package:dim_sum_order/models/order.dart';
 import 'package:dim_sum_order/providers/cart_provider.dart';
 import 'package:dim_sum_order/utils/source_data.dart';
 import 'package:flutter/material.dart';
@@ -146,9 +147,11 @@ class CartScreen extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         cart.addOrders(
-                          total: cart.total,
-                          quantity: cart.itemCount,
-                          order: cart.items,
+                          Order(
+                            total: cart.total,
+                            quantity: cart.itemCount,
+                            items: cart.items,
+                          ),
                         );
                         cart.clearCart();
                         Navigator.pop(context);
