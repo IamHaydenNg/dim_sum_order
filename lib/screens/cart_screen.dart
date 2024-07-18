@@ -68,11 +68,11 @@ class CartScreen extends StatelessWidget {
                             itemCount: noRepetitiveList.length,
                             itemBuilder: (context, index) {
                               final item = noRepetitiveList[index];
-                              final itemAmount =
+                              final quantity =
                                   SourceData.itemOnCartAmount(cart, item);
                               final price = SourceData.price(
                                   dimSumCategory, item.category);
-                              final itemPrice = price * itemAmount;
+                              final itemPrice = price * quantity;
 
                               return Padding(
                                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 8),
@@ -80,7 +80,7 @@ class CartScreen extends StatelessWidget {
                                   children: [
                                     flexibleItem(item.name),
                                     flexibleItem(
-                                      itemAmount.toString(),
+                                      quantity.toString(),
                                     ),
                                     flexibleItem('\$${itemPrice.toString()}'),
                                   ],
