@@ -4,36 +4,50 @@ import 'package:dim_sum_order/models/dimsum.dart';
 import 'package:dim_sum_order/models/dimsum_category.dart';
 
 class CartProvider with ChangeNotifier {
-  List<DimSum> _items = [];
+  List<DimSum> _cartItems = [];
 
-  List<DimSum> get items => _items;
+  List<DimSum> get items => _cartItems;
 
-  int get itemCount => _items.length;
+  int get itemCount => _cartItems.length;
 
-  double _total = 0.0;
+  double _cartTotal = 0.0;
 
-  double get total => _total;
+  double get total => _cartTotal;
+
+  List<dynamic> _orders = [];
+
+  List<dynamic> get orders => _orders;
+
+  void addOrders({
+    required double total,
+    required int quantity,
+    required List<DimSum> order,
+  }) {
+    _orders.add({total, quantity, order});
+    notifyListeners();
+  }
 
   void addItem(DimSum dimSum) {
-    _items.add(dimSum);
+    _cartItems.add(dimSum);
     notifyListeners();
   }
 
   void removeItem(DimSum dimSum) {
-    final DimSum firstItem = _items
+    final DimSum firstItem = _cartItems
         .firstWhere((x) => x.id == dimSum.id && x.category == dimSum.category);
-    _items.remove(firstItem);
+    _cartItems.remove(firstItem);
     notifyListeners();
   }
 
   void setTotal(DimSumCategory category) {
-    _total = _items.fold(
+    _cartTotal = _cartItems.fold(
         0.0, (sum, item) => sum + SourceData.price(category, item.category));
     notifyListeners();
   }
 
   void clearCart() {
-    _items = [];
+    _cartItems = [];
+    _cartTotal = 0.0;
     notifyListeners();
   }
 }

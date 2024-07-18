@@ -144,7 +144,15 @@ class CartScreen extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(horizontal: 16),
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        cart.addOrders(
+                          total: cart.total,
+                          quantity: cart.itemCount,
+                          order: cart.items,
+                        );
+                        cart.clearCart();
+                        Navigator.pop(context);
+                      },
                       style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all(
                           Colors.amber,
@@ -161,7 +169,7 @@ class CartScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
         ],
       ),
     );
