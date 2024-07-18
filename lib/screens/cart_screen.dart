@@ -3,6 +3,7 @@ import 'package:dim_sum_order/models/dimsum_category.dart';
 import 'package:dim_sum_order/models/order.dart';
 import 'package:dim_sum_order/providers/cart_provider.dart';
 import 'package:dim_sum_order/utils/source_data.dart';
+import 'package:dim_sum_order/widgets/confirm_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -137,42 +138,20 @@ class CartScreen extends StatelessWidget {
                   ),
                 ),
           if (cartItems.isNotEmpty)
-            Expanded(
-              child: SafeArea(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 16),
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        cart.addOrders(
-                          Order(
-                            total: cart.total,
-                            quantity: cart.itemCount,
-                            items: cart.items,
-                          ),
-                        );
-                        cart.clearCart();
-                        Navigator.pop(context);
-                      },
-                      style: ButtonStyle(
-                        backgroundColor: WidgetStateProperty.all(
-                          Colors.amber,
-                        ),
-                        foregroundColor: WidgetStateProperty.all(
-                          Theme.of(context).primaryColor,
-                        ),
-                      ),
-                      child: const Text(
-                        '確認訂單',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ),
+            ConfirmButton(
+              label: '確認訂單',
+              action: () {
+                cart.addOrders(
+                  Order(
+                    total: cart.total,
+                    quantity: cart.itemCount,
+                    items: cart.items,
                   ),
-                ),
-              ),
-            ),
+                );
+                cart.clearCart();
+                Navigator.pop(context);
+              },
+            )
         ],
       ),
     );
