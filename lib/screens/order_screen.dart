@@ -105,10 +105,7 @@ class OrderScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                Flexible(
-                  fit: FlexFit.tight,
-                  child: ConfirmButton(label: '埋單', action: () {}),
-                )
+                ConfirmButton(label: '埋單', action: () {}),
               ],
             )
           : Center(
