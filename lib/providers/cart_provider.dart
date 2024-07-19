@@ -50,4 +50,9 @@ class CartProvider with ChangeNotifier {
     _cartTotal = 0.0;
     notifyListeners();
   }
+
+  void clearOrder() {
+    _orders = [];
+    notifyListeners();
+  }
 }

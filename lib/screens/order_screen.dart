@@ -1,4 +1,5 @@
 import 'package:dim_sum_order/providers/cart_provider.dart';
+import 'package:dim_sum_order/screens/payment_success_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -107,7 +108,6 @@ class OrderScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                // ConfirmButton(label: '埋單', action: () {}),
                 Container(
                   decoration: BoxDecoration(
                     color: Theme.of(context).scaffoldBackgroundColor,
@@ -120,7 +120,6 @@ class OrderScreen extends StatelessWidget {
                         color: Color.fromARGB(255, 232, 231, 231),
                         spreadRadius: 2,
                         blurRadius: 10,
-                        offset: Offset(0, 0), // changes position of shadow
                       ),
                     ],
                   ),
@@ -134,10 +133,22 @@ class OrderScreen extends StatelessWidget {
                       children: [
                         Text(
                           '總計金額: \$$totalOrderAmount',
-                          style: const TextStyle(fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            cart.clearOrder();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const PaymentSuccessScreen(),
+                              ),
+                            );
+                          },
                           style: ButtonStyle(
                             backgroundColor: WidgetStateProperty.all(
                               Colors.amber,
@@ -146,8 +157,9 @@ class OrderScreen extends StatelessWidget {
                           child: Text(
                             '支付',
                             style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontWeight: FontWeight.bold),
+                              color: Theme.of(context).primaryColor,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         )
                       ],
