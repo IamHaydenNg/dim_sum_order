@@ -19,6 +19,9 @@ class CartProvider with ChangeNotifier {
 
   List<Order> get orders => _orders;
 
+  double get totalOrderAmount =>
+      _orders.fold(0.0, (sum, item) => sum + item.total);
+
   void addOrders(Order order) {
     _orders.add(order);
     notifyListeners();

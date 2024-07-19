@@ -1,5 +1,4 @@
 import 'package:dim_sum_order/providers/cart_provider.dart';
-import 'package:dim_sum_order/widgets/confirm_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,8 +7,10 @@ class OrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final orders = Provider.of<CartProvider>(context).orders;
+    final cart = Provider.of<CartProvider>(context);
+    final orders = cart.orders;
     final orderQuantity = orders.length;
+    final totalOrderAmount = cart.totalOrderAmount;
 
     return Scaffold(
       body: orders.isNotEmpty
@@ -27,7 +28,10 @@ class OrderScreen extends StatelessWidget {
                       final noRepetitiveList = items.toSet().toList();
 
                       return Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 8.0,
+                          horizontal: 16,
+                        ),
                         child: ExpansionTile(
                           title: Text(
                             '訂單: #${index + 1}',
@@ -103,7 +107,53 @@ class OrderScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                ConfirmButton(label: '埋單', action: () {}),
+                // ConfirmButton(label: '埋單', action: () {}),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(24),
+                      topRight: Radius.circular(24),
+                    ),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 232, 231, 231),
+                        spreadRadius: 2,
+                        blurRadius: 10,
+                        offset: Offset(0, 0), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 16.0,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '總計金額: \$$totalOrderAmount',
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: WidgetStateProperty.all(
+                              Colors.amber,
+                            ),
+                          ),
+                          child: Text(
+                            '支付',
+                            style: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             )
           : Center(
