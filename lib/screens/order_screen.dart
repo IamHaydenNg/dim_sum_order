@@ -15,9 +15,7 @@ class OrderScreen extends StatelessWidget {
       body: orders.isNotEmpty
           ? Column(
               children: [
-                Flexible(
-                  flex: 10,
-                  fit: FlexFit.tight,
+                Expanded(
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: orderQuantity,

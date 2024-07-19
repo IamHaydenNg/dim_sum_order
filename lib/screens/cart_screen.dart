@@ -138,19 +138,21 @@ class CartScreen extends StatelessWidget {
                   ),
                 ),
           if (cartItems.isNotEmpty)
-            ConfirmButton(
-              label: '確認訂單',
-              action: () {
-                cart.addOrders(
-                  Order(
-                    total: cart.total,
-                    quantity: cart.itemCount,
-                    items: cart.items,
-                  ),
-                );
-                cart.clearCart();
-                Navigator.pop(context);
-              },
+            Expanded(
+              child: ConfirmButton(
+                label: '確認訂單',
+                action: () {
+                  cart.addOrders(
+                    Order(
+                      total: cart.total,
+                      quantity: cart.itemCount,
+                      items: cart.items,
+                    ),
+                  );
+                  cart.clearCart();
+                  Navigator.pop(context);
+                },
+              ),
             )
         ],
       ),
